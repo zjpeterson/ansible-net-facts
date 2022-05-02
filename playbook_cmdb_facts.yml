@@ -1,0 +1,13 @@
+---
+- name: Update version information in CMDB
+  hosts: ios
+  gather_facts: yes
+
+  tasks:
+    - name: Perform CMDB update
+      servicenow.itsm.configuration_item:
+        sys_id: "{{ sys_id }}"
+        other:
+          firmware_version: "{{ ansible_net_version }}"
+          model_id: "{{ net_manufacturer }} {{ ansible_net_model }}"
+          serial_number: "{{ ansible_net_serialnum }}"

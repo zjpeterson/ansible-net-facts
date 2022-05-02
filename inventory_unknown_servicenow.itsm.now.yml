@@ -1,0 +1,12 @@
+---
+plugin: servicenow.itsm.now
+table: cmdb_ci_netgear
+columns:
+  - name
+  - ip_address
+  - sys_id
+query:
+  - model_id.name: = CSR1000V
+  - model_id.name: = Unknown
+groups:
+  ios: "'Cisco' in model_id"
